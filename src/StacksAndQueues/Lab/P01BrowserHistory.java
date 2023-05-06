@@ -14,7 +14,7 @@ public class P01BrowserHistory {
 
         while (!currentInput.equals("Home")){
             if (currentInput.equals("back")) {
-                if (history.size() == 1) {
+                if (history.isEmpty() || history.size() == 1) {
                     System.out.println("no previous URLs");
                 } else {
                     history.pop();
