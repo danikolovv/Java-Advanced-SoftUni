@@ -13,9 +13,11 @@ public class Main {
         stack.push(45);
         stack.push(12);
 
-        while (!stack.isEmpty()) {
-            int topElement = stack.pop();
-            System.out.println(topElement);
-        }
+//        while (!stack.isEmpty()) {
+//            int topElement = stack.pop();
+//            System.out.println(topElement);
+//        }
+
+        System.out.println(stack.peek());
     }
 }
