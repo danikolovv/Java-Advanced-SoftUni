@@ -25,6 +25,6 @@ public class P06HotPotato {
             System.out.println("Removed " + queue.poll());
         }
 
-        System.out.println("Last " + queue.poll());
+        System.out.println("Last is " + queue.poll());
     }
 }
