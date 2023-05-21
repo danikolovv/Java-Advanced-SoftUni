@@ -9,8 +9,19 @@ public class P03DecimalToBinaryConverter {
 
         ArrayDeque<Integer> stack = new ArrayDeque<>();
 
-        int num = Integer.parseInt(scanner.nextLine());
+        int number = Integer.parseInt(scanner.nextLine());
 
+        if (number == 0){
+            System.out.println(0);
+        }
 
+        while (number != 0){
+            stack.push(number % 2);
+            number /= 2;
+        }
+
+        while (!stack.isEmpty()){
+            System.out.print(stack.pop());
+        }
     }
 }
