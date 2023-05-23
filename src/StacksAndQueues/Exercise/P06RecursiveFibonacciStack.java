@@ -13,6 +13,11 @@ public class P06RecursiveFibonacciStack {
         stack.push(0L);
         stack.push(1L);
 
+        if (n < 2) {
+            System.out.println(1);
+            return;
+        }
+
         for (int i = 1; i <= n; i++) {
             long first = stack.pop();
             long second = stack.pop();
@@ -20,6 +25,6 @@ public class P06RecursiveFibonacciStack {
             long sum = first + second;
             stack.push(sum);
         }
-        System.out.println(stack.peek());
+        System.out.println(stack.pop());
     }
 }
