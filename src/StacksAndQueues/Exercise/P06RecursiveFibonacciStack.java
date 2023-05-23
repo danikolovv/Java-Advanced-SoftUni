@@ -13,10 +13,10 @@ public class P06RecursiveFibonacciStack {
         stack.push(0L);
         stack.push(1L);
 
-        if (n < 2) {
-            System.out.println(1);
-            return;
-        }
+//        if (n < 2) {
+//            System.out.println(1);
+//            return;
+//        }
 
         for (int i = 1; i <= n; i++) {
             long first = stack.pop();
