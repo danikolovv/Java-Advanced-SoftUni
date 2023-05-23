@@ -10,8 +10,8 @@ public class P06RecursiveFibonacciStack {
         long n = Integer.parseInt(scanner.nextLine());
 
         ArrayDeque<Long> stack = new ArrayDeque<>();
-        stack.push(0l);
-        stack.push(1l);
+        stack.push(0L);
+        stack.push(1L);
 
         for (int i = 1; i <= n; i++) {
             long first = stack.pop();
