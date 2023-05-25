@@ -34,7 +34,7 @@ public class P01FillTheMatrix {
         }
     }
 
-    private static int[][] patternB(int[][] matrix) {
+    private static /*int[][]*/ void patternB(int[][] matrix) {
 
         int count = 1;
         for (int col = 0; col < matrix.length; col++) {
@@ -48,10 +48,10 @@ public class P01FillTheMatrix {
                 }
             }
         }
-        return matrix;
+//        return matrix;
     }
 
-    private static int[][] patternA(int[][] matrix) {
+    private static /*int[][]*/ void patternA(int[][] matrix) {
 
         int count = 1;
         for (int row = 0; row < matrix.length; row++) {
@@ -59,7 +59,7 @@ public class P01FillTheMatrix {
                 matrix[col][row] = count++;
             }
         }
-        return matrix;
+//        return matrix;
     }
 
 
