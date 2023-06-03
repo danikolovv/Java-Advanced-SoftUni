@@ -1,10 +1,10 @@
-package SetsAndMapsAdvanced.Lab;
+package Examples;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class P02SoftUniParty {
+public class ExampleOfMap {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
