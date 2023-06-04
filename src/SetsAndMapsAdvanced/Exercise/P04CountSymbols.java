@@ -20,6 +20,6 @@ public class P04CountSymbols {
 
         }
 
-        characterIntegerMap.forEach((k, v) -> System.out.printf("%c : %d time/s%n", k, v));
+        characterIntegerMap.forEach((k, v) -> System.out.printf("%c: %d time/s%n", k, v));
     }
 }
