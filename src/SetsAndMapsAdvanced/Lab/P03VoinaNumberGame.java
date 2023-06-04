@@ -50,11 +50,4 @@ public class P03VoinaNumberGame {
         }
         System.out.println(output);
     }
-
-    public static int getFirstCard(Set<Integer> cards) {
-        for (Integer card : cards) {
-            return card;
-        }
-        return 0;
-    }
 }
