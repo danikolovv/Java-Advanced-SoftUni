@@ -1,9 +1,6 @@
 package FunctionalProgramming.Lab;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class P01SortEvenNumbers {
@@ -15,12 +12,20 @@ public class P01SortEvenNumbers {
                                 .map(Integer::parseInt)
                                 .filter(n -> n % 2 == 0)
                                 .collect(Collectors.toList());
-
-        String replace = numbers.toString().replace("[", "").replace("]", "");
-        System.out.println(String.join(", ", replace));
+        printListWithComma(numbers);
 
         Collections.sort(numbers);
 
-        System.out.println(String.join(", ", replace));
+        printListWithComma(numbers);
+    }
+
+    private static void printListWithComma(List<Integer> numbers) {
+        List<String> numbersAsText = new ArrayList<>();
+
+        for (int number : numbers) {
+            numbersAsText.add(String.valueOf(number));
+        }
+
+        System.out.println(String.join(", ", numbersAsText));
     }
 }
