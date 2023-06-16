@@ -8,26 +8,19 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class P01SumLines {
-    public static void main(String[] args) throws IOException {
-        String path = "C:\\Users\\Kaloyan\\Desktop\\java-advanced\\src\\StreamsFilesAndDirectories\\04. Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
-        try (
-                FileReader fileReader = new FileReader(path)) {
-            Scanner scanner = new Scanner(fileReader);
+    public static void main(String[] args) {
+        String path = "C:\\Users\\Dani\\IdeaProjects\\JavaAdvanced\\src\\StreamsFilesAndDirectories\\Resources\\04. Java-Advanced-Streams-Files-and-Directories-Resources\\04. Java-Advanced-Files-and-Streams-Lab-Resources\\input.txt";
 
-            while (scanner.hasNextLine()){
-                String line = scanner.nextLine();
-
-                char[] chars = line.toCharArray();
-                long sum = 0;
-                for (char c : chars) {
-                    sum += c;
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(path))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                int sum = 0;
+                for (char ch : line.toCharArray()) {
+                    sum += ch;
                 }
                 System.out.println(sum);
             }
-
-
         } catch (IOException e) {
-
             e.printStackTrace();
         }
     }
