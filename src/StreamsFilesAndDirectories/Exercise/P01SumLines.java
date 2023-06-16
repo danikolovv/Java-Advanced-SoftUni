@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class P01SumLines {
     public static void main(String[] args) {
-        String path = "C:\\Users\\Dani\\IdeaProjects\\JavaAdvanced\\src\\StreamsFilesAndDirectories\\Resources\\04. Java-Advanced-Streams-Files-and-Directories-Resources\\04. Java-Advanced-Files-and-Streams-Lab-Resources\\input.txt";
+        String path = "...\\Resources\\04. Java-Advanced-Streams-Files-and-Directories-Resources\\04. Java-Advanced-Files-and-Streams-Lab-Resources\\input.txt";
 
         try (BufferedReader reader = Files.newBufferedReader(Paths.get(path))) {
             String line;
