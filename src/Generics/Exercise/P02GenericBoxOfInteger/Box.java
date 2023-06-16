@@ -1,17 +1,10 @@
-package Generics.Exercise.P01GenericBox;
-
-import java.util.ArrayList;
-import java.util.List;
+package Generics.Exercise.P02GenericBoxOfInteger;
 
 public class Box<T> {
     private T data;
 
     public Box(T data) {
         this.data = data;
-    }
-
-    public T getData() {
-        return data;
     }
 
     @Override

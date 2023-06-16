@@ -1,4 +1,4 @@
-package Generics.Exercise.P01GenericBox;
+package Generics.Exercise.P02GenericBoxOfInteger;
 
 import java.util.Scanner;
 
@@ -8,8 +8,8 @@ public class Main {
         int n = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < n; i++) {
-            String value = scanner.nextLine();
-            Box<String> box = new Box<>(value);
+            int value = Integer.parseInt(scanner.nextLine());
+            Box<Integer> box = new Box<>(value);
             System.out.println(box.toString());
         }
     }
