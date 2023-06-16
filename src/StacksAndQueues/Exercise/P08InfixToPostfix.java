@@ -66,19 +66,23 @@ public class P08InfixToPostfix {
 
     private static int getPrecedence(String current) {
         switch (current){
-            case "+", "-":
+            case "+":
                 return 2;
-            case "*", "/":
+            case "-":
+                return 2;
+            case "*":
+                return 3;
+            case "/":
                 return 3;
 
         }
         return 0;
     }
 
-    private static boolean contains(String symbol, String[] operators){
+    private static boolean contains(String symbol, String[] operators) {
         for (int i = 0; i < operators.length; i++) {
             String operator = operators[i];
-            if(symbol.equals(operator)){
+            if (symbol.equals(operator)) {
                 return true;
             }
         }
