@@ -2,7 +2,7 @@ package IteratorsAndComparators.Exercise.P07EqualityLogic;
 
 import java.util.Objects;
 
-class Person {
+public class Person implements Comparable<Person> {
     private String name;
     private int age;
 
@@ -20,19 +20,33 @@ class Person {
     }
 
     @Override
+    public int hashCode() {
+        return (this.name.hashCode() + Integer.hashCode(age)) * 73;
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj instanceof Person) {
+            Person other = (Person) obj;
+            return this.name.equals(other.name) && this.age == other.age;
         }
-        Person person = (Person) obj;
-        return age == person.age && Objects.equals(name, person.name);
+        return false;
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name, age);
+    public String toString() {
+        return String.format("%s %d", this.name, this.age);
+    }
+
+    @Override
+    public int compareTo(Person other) {
+        int result = this.name.compareTo(other.name);
+        if (result == 0) {
+            result = Integer.compare(this.age, other.age);
+        }
+        return result;
     }
 }
