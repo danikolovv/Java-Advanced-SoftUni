@@ -1,5 +1,6 @@
 package FunctionalProgramming.Exercise;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -9,22 +10,35 @@ import java.util.stream.Collectors;
 public class P09ListOfPredicates {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        scanner.nextLine();
 
-        int maxNumber = Integer.parseInt(scanner.nextLine());
-        List<Integer> numbersToCompare = Arrays.stream(scanner.nextLine().split("\\s+")).map(Integer::parseInt).collect(Collectors.toList());
+        String[] sequence = scanner.nextLine().split(" ");
+        List<Integer> numbers = new ArrayList<>();
 
-        Predicate<Integer> predicate = number -> {
-            for (Integer item : numbersToCompare) {
-                if (number % item != 0) {
-                    return false;
+        for (int i = 1; i <= N; i++) {
+            boolean divisible = true;
+
+            for (String s : sequence) {
+                int divisor = Integer.parseInt(s);
+                Predicate<Integer> isDivisible = num -> num % divisor == 0;
+
+                if (!isDivisible.test(i)) {
+                    divisible = false;
+                    break;
                 }
             }
-            return true;
-        };
 
-        for (int number = 1; number <= maxNumber; number++) {
-            if (predicate.test(number)) {
-                System.out.printf("%d ", number);
+            if (divisible) {
+                numbers.add(i);
+            }
+        }
+
+        // Print the numbers separated by spaces
+        for (int i = 0; i < numbers.size(); i++) {
+            System.out.print(numbers.get(i));
+            if (i < numbers.size() - 1) {
+                System.out.print(" ");
             }
         }
     }
